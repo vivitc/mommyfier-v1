@@ -10,4 +10,12 @@ public class MommyfierTest {
         String emptyString = "";
         assertThat(emptyString, is(mommyfier.mommyfy(emptyString)));
     }
+
+    @Test
+    public void shouldReturnMommyWhenOneVocalFound() throws Exception {
+        Mommyfier mommyfier = new Mommyfier();
+
+        String vowel = "a";
+        assertThat("mommy", is(mommyfier.mommyfy(vowel)));
+    }
 }
