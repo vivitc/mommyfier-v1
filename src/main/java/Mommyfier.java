@@ -1,21 +1,32 @@
 
 public class Mommyfier {
     public static final String MOMMY = "mommy";
-    public String mommyfy(String word) {
-        if(!word.isEmpty()) {
-            boolean isVowel = isVowel(firstLetterInLowerCaseFrom(word));
-            if (isVowel) {
-                return MOMMY;
+    private static final String EMPTY_STRING = "";
+
+    public String mommyfyWord(String word) {
+        String mommyfiedWord = "";
+        boolean shouldAddMommy = false;
+        for(char character : word.toCharArray()) {
+            if(!isVowel(character)){
+                mommyfiedWord += (getMommy(shouldAddMommy) + String.valueOf(character));
+                shouldAddMommy = false;
+            } else {
+                shouldAddMommy = true;
             }
         }
-        return word;
+        mommyfiedWord += getMommy(shouldAddMommy);
+        return mommyfiedWord;
     }
 
-    private char firstLetterInLowerCaseFrom(String word) {
-        return word.toLowerCase().charAt(0);
+    private String getMommy(boolean shouldAddMommy){
+        if(shouldAddMommy){
+            return MOMMY;
+        } else {
+            return EMPTY_STRING;
+        }
     }
 
     private boolean isVowel(char character) {
-        return character == 'a';
+        return "aeiouAEIOU".indexOf(character) >= 0;
     }
 }
