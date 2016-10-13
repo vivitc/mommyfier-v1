@@ -20,6 +20,14 @@ public class MommyfierTest {
     }
 
     @Test
+    public void shouldReturnNotMommyWhenNoVocalFound() {
+        Mommyfier mommyfier = new Mommyfier();
+
+        String vowel = "d";
+        assertThat(mommyfier.mommyfyWord(vowel), is("d"));
+    }
+
+    @Test
     public void shouldReturnMommyWhenMoreThanOneVocalFound() {
         Mommyfier mommyfier = new Mommyfier();
 
@@ -36,6 +44,14 @@ public class MommyfierTest {
     }
 
     @Test
+    public void shouldReturnMommyWhenOneVowelAndDifferentLetterFollowedByVowles() {
+        Mommyfier mommyfier = new Mommyfier();
+
+        String word = "addaA";
+        assertThat(mommyfier.mommyfyWord(word), is ("mommyddmommy"));
+    }
+
+    @Test
     public void shouldNotReturnMommyIfNoVowelsFound(){
         Mommyfier mommyfier = new Mommyfier();
 
@@ -47,7 +63,7 @@ public class MommyfierTest {
     public void shouldReturnMommyIfVowelLastLetter(){
         Mommyfier mommyfier = new Mommyfier();
 
-        String word = "qwtymnA";
+        String word = "qwtymnAeeeeeee";
         assertThat(mommyfier.mommyfyWord(word), is ("qwtymnmommy"));
     }
 }
