@@ -8,7 +8,7 @@ public class MommyfierTest {
     public void shouldReturnEmptyString() {
         Mommyfier mommyfier = new Mommyfier();
         String emptyString = "";
-        assertThat(mommyfier.mommyfyWord(emptyString), is(emptyString));
+        assertThat(mommyfier.mommyfy(emptyString), is(emptyString));
     }
 
     @Test
@@ -16,7 +16,7 @@ public class MommyfierTest {
         Mommyfier mommyfier = new Mommyfier();
 
         String vowel = "a";
-        assertThat(mommyfier.mommyfyWord(vowel), is("mommy"));
+        assertThat(mommyfier.mommyfy(vowel), is("mommy"));
     }
 
     @Test
@@ -24,7 +24,7 @@ public class MommyfierTest {
         Mommyfier mommyfier = new Mommyfier();
 
         String vowel = "d";
-        assertThat(mommyfier.mommyfyWord(vowel), is("d"));
+        assertThat(mommyfier.mommyfy(vowel), is("d"));
     }
 
     @Test
@@ -32,7 +32,7 @@ public class MommyfierTest {
         Mommyfier mommyfier = new Mommyfier();
 
         String wordWithMultipleVowels = "aeiouAEIOU";
-        assertThat(mommyfier.mommyfyWord(wordWithMultipleVowels), is("mommy"));
+        assertThat(mommyfier.mommyfy(wordWithMultipleVowels), is("mommy"));
     }
 
     @Test
@@ -40,7 +40,7 @@ public class MommyfierTest {
         Mommyfier mommyfier = new Mommyfier();
 
         String word = "add";
-        assertThat(mommyfier.mommyfyWord(word), is ("mommydd"));
+        assertThat(mommyfier.mommyfy(word), is ("mommydd"));
     }
 
     @Test
@@ -48,7 +48,7 @@ public class MommyfierTest {
         Mommyfier mommyfier = new Mommyfier();
 
         String word = "addaA";
-        assertThat(mommyfier.mommyfyWord(word), is ("mommyddmommy"));
+        assertThat(mommyfier.mommyfy(word), is ("mommyddmommy"));
     }
 
     @Test
@@ -56,7 +56,7 @@ public class MommyfierTest {
         Mommyfier mommyfier = new Mommyfier();
 
         String word = "qwtymn";
-        assertThat(mommyfier.mommyfyWord(word), is ("qwtymn"));
+        assertThat(mommyfier.mommyfy(word), is ("qwtymn"));
     }
 
     @Test
@@ -64,6 +64,6 @@ public class MommyfierTest {
         Mommyfier mommyfier = new Mommyfier();
 
         String word = "qwtymnAeeeeeee";
-        assertThat(mommyfier.mommyfyWord(word), is ("qwtymnmommy"));
+        assertThat(mommyfier.mommyfy(word), is ("qwtymnmommy"));
     }
 }
